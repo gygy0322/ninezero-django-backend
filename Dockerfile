@@ -21,9 +21,9 @@ ENV PYTHONUNBUFFERED 1
 # tmp 폴더는 나중에 빌드가 완료되면 삭제합니다.
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
-COPY ./app /app
+# COPY ./app /app
 
-WORKDIR /app
+# WORKDIR /app
 EXPOSE 8000
 
 ARG DEV=false

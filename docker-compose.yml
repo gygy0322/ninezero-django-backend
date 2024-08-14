@@ -1,0 +1,13 @@
+version: "3.11" # docker compose API version 3.11
+services:
+  app:
+    build:
+      context: .
+      # 현재 디렉토리에 있는 Dockerfile을 사용하여 이미지를 빌드합니다
+      args:
+        - DEV=true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
